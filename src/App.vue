@@ -1,15 +1,17 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
-const tg = window.Telegram.WebApp;
+if(window.Telegram){
+  const tg = window.Telegram.WebApp;
 
-tg.ready(); // 告诉 Telegram 小程序已准备就绪
+  tg.ready(); // 告诉 Telegram 小程序已准备就绪
 
-// 设置 UI 外观
-tg.expand(); // 展开为全屏
-tg.MainButton.setText("提交").show().onClick(() => {
-  // 点击按钮时的处理逻辑
-  tg.sendData("some_payload"); // 向 bot 发送数据
-});
+  // 设置 UI 外观
+  tg.expand(); // 展开为全屏
+  tg.MainButton.setText("提交").show().onClick(() => {
+    // 点击按钮时的处理逻辑
+    tg.sendData("some_payload"); // 向 bot 发送数据
+  });
+}
 </script>
 
 <template>
