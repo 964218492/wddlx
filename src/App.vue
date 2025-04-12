@@ -1,6 +1,7 @@
 <script setup>
+let tg
 if(window.Telegram){
-  const tg = window.Telegram.WebApp;
+  tg = window.Telegram.WebApp;
 
   tg.ready(); // 告诉 Telegram 小程序已准备就绪
   const user = tg.initDataUnsafe.user;
@@ -15,9 +16,12 @@ if(window.Telegram){
     // 点击按钮时的处理逻辑
     tg.sendData("some_payload"); // 向 bot 发送数据
   });
-  const phoneBtn = ()=>{
+  
+}
+const phoneBtn = ()=>{
+  if(tg){
     tg.requestContact((contact) => {
-        console.log("用户手机号:", contact.phone_number);
+      console.log("用户手机号:", contact.phone_number);
     });
   }
 }
