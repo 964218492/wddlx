@@ -4,26 +4,28 @@ if(window.Telegram){
   const tg = window.Telegram.WebApp;
 
   tg.ready(); // 告诉 Telegram 小程序已准备就绪
-
+  const user = tg.initDataUnsafe.user;
+  console.log(user);
+  
+  console.log("用户ID:", user.id);
+  console.log("名字:", user.first_name);
+  console.log("用户名:", user.username);
   // 设置 UI 外观
   tg.expand(); // 展开为全屏
   tg.MainButton.setText("提交").show().onClick(() => {
     // 点击按钮时的处理逻辑
     tg.sendData("some_payload"); // 向 bot 发送数据
   });
+  const phoneBtn = ()=>{
+    tg.requestContact((contact) => {
+        console.log("用户手机号:", contact.phone_number);
+    });
+  }
 }
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <button @click="phoneBtn">拿取手机号</button>
 </template>
 
 <style scoped>

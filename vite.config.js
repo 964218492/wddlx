@@ -11,4 +11,14 @@ export default defineConfig({
     open: false, // 是否自动打开浏览器
     strictPort: false
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+        @import "@/assets/css/bem.scss";
+        @import "@/assets/css/index.scss";
+        ` // 定义全局css
+      }
+    }
+  }
 })

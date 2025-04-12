@@ -1,0 +1,64 @@
+:root {
+    --jysPC-color: #0080F6;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+
+    &.direction {
+        flex-direction: column;
+    }
+
+    &.start {
+        align-items: flex-start;
+    }
+
+    &.end {
+        align-items: flex-end;
+    }
+
+    &.center {
+        justify-content: center;
+    }
+
+    &.between {
+        justify-content: space-between;
+    }
+
+    &.around {
+        justify-content: space-around;
+    }
+
+    &.evenly {
+        justify-content: space-evenly;
+    }
+
+    &.js_end {
+        justify-content: flex-end;
+    }
+
+    &.main-axis-end {
+        justify-content: flex-end;
+    }
+
+    &.wrap {
+        flex-wrap: wrap;
+    }
+
+    &.stretch {
+        align-items: stretch;
+    }
+
+    &.alEnd {
+        align-items: end;
+    }
+
+    &.js_stretch {
+        justify-items: stretch;
+    }
+
+    &.baseline {
+        align-items: baseline;
+    }
+}

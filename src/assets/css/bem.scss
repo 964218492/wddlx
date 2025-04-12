@@ -1,0 +1,27 @@
+$namespace: 'jysPC' !default;
+$block-sel: '-' !default;
+$elem-sel: '__' !default;
+$mod-sel: '--' !default;
+
+@mixin b($block){
+    $b:#{$namespace + $block-sel + $block};
+    .#{$b}{
+        @content;
+    }
+}
+@mixin e($element){
+    $selector: &;
+    @at-root{
+        #{$selector + $elem-sel + $element}{
+            @content;
+        }
+    }
+}
+@mixin m($modifier){
+    $selector: &;
+    @at-root{
+        #{$selector + $mod-sel + $modifier}{
+            @content;
+        }
+    }
+}
