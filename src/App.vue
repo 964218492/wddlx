@@ -1,5 +1,4 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
 if(window.Telegram){
   const tg = window.Telegram.WebApp;
 
