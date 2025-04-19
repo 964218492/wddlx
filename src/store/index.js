@@ -3,7 +3,7 @@ export const useStore = defineStore('wddlx', {
   state: () => {
     return {
       userInfo: null,
-      apiUrl: 'https://wccx.site:18000'
+      apiUrl: 'https://news.2008news.com:18000'
     };
   },
   persist: [
