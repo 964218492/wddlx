@@ -7,25 +7,26 @@ const store = useStore()
 const route = useRoute();
 const router = useRouter();
 let load = ref(false);
-onMounted(async ()=>{
+
   if(window.Telegram && window.Telegram.WebApp){
+    onMounted(async ()=>{
     try{
-      tg = window.Telegram.WebApp;
-      const { hash, auth_date, user } = tg.initDataUnsafe
-      const { data } = await login({
-        ...user,
-        hash,
-        auth_date
-      })
-      store.userInfo = data
-      load.value = true
-    }catch(error){
-      load.value = true
-      router.replace('/')
-      console.log(error)
-    }
+      const tg = window.Telegram.WebApp;
+        const { hash, auth_date, user } = tg.initDataUnsafe
+        const { data } = await login({
+          ...user,
+          hash,
+          auth_date
+        })
+        store.userInfo = data
+        load.value = true
+      }catch(error){
+        load.value = true
+        router.replace('/')
+        console.log(error)
+      }
+    })
   }
-})
 // let tg
 // if(window.Telegram && window.Telegram.WebApp){
 //   tg = window.Telegram.WebApp;
