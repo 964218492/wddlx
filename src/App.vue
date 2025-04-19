@@ -18,8 +18,18 @@ if(window.Telegram && window.Telegram.WebApp){
       const { data } = await login({
         ...user,
         hash,
-        auth_date
+        auth_date,
+        nickname: user.first_name,
+        // auth_date: "1745068793",
+        // hash: "40ece322c2a0c5f87d85b679527ed22d5e4610a98cf6693741fcb5c9573e0165",
+        // allows_write_to_pm: true,
+        // first_name: "超",
+        // id: 7127007092,
+        // language_code: "zh-hans",
+        // last_name: "",
+        // photo_url: "https://t.me/i/userpic/320/MkGUMLc3GmGIZLhviw_z2WBp8eio6EEyqeN-Q0dsuxw_HOiPEFtrYni3mMJgvdf8.svg"
       })
+      
       store.userInfo = data
       load.value = true
     }catch(error){

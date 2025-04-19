@@ -16,7 +16,7 @@
         <div class="nb-user flex">
           <img class="imgCover nb-user__avatar" :src="store.userInfo.photo_url" alt="">
           <div>
-            <p class="nb-user__nickname">{{ store.userInfo.nickname }}caho</p>
+            <p class="nb-user__nickname">{{ store.userInfo.nickname }}</p>
             <span>ID:{{ store.userInfo.app_id }}</span>
           </div>
         </div>
